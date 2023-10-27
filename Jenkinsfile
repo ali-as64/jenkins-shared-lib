@@ -2,7 +2,9 @@
 pipeline {
     agent any
     
-
+    tools {
+        maven 'maven'
+    }
     
     stages {
         
@@ -15,12 +17,17 @@ pipeline {
                     )
             }
         }
-        
+        stage("Build Application"){
+            steps {
+                sh "mvn install"
+            }
+
+        }
         stage('Unit Test maven') {
             
             steps {
                script{
-                    mavenTest()
+                 mavenTest()
                 }
             }
         }
@@ -38,7 +45,7 @@ pipeline {
             
             steps {
                 script{
-                    pass
+                    staticCodeAnlysis()
                 }
             }
         }
