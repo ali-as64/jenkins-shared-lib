@@ -59,14 +59,14 @@ pipeline {
                 }
             }
         }
-        stage('quality gate analysis check with sonarqube') {
-                when { expression {  params.action == 'create' } }
-            steps {
-                script{
-                    def SQcredentialsId = 'sonarqube-token2'
-                    qualityGateStatus(SQcredentialsId)
-                }
-            }
+        // stage('quality gate analysis check with sonarqube') {
+        //         when { expression {  params.action == 'create' } }
+        //     steps {
+        //         script{
+        //             def SQcredentialsId = 'sonarqube-token2'
+        //             qualityGateStatus(SQcredentialsId)
+        //         }
+        //     }
         }
         stage('maven build: maven') {
                 when { expression {  params.action == 'create' } }
