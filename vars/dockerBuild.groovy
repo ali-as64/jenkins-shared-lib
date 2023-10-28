@@ -1,8 +1,7 @@
-def call(string projrct, string imageTag, string dockerHubUser){
+def call(string project, string imageTag, string dockerHubUser){
     sh '''
-      docker buid -t {$dockerHubUser}/${projrct}
-      docker image tag  {$dockerHubUser}/${projrct} {$dockerHubUser}/${projrct}:${imageTag}
-      docker image tag  {$dockerHubUser}/${projrct} {$dockerHubUser}/${projrct}:latest
-      '''
-
+      docker buid -t {$dockerHubUser}/${project}
+      docker image tag  {$dockerHubUser}/${project} {$dockerHubUser}/${project}:${imageTag}
+      docker image tag  {$dockerHubUser}/${project} {$dockerHubUser}/${project}:latest
+    '''
 }
