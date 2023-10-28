@@ -75,7 +75,8 @@ pipeline {
                     mavenBuild()
                 }
             }
-        }stage('docker build: docker') {
+        }
+        stage('docker build: docker') {
                 when { expression {  params.action == 'create' } }
             steps {
                 script{
