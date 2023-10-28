@@ -50,7 +50,7 @@ pipeline {
             }
         }
         
-        stage('static code analysis') {
+        stage('static code analysis with sonarqube') {
                 when { expression {  params.action == 'create' } }
             steps {
                 script{
@@ -59,6 +59,14 @@ pipeline {
                 }
             }
         }
-        
+        stage('quality gate analysis check with sonarqube') {
+                when { expression {  params.action == 'create' } }
+            steps {
+                script{
+                    def SQcredentialsId = 'sonarqube-token2'
+                    qualityGateStatus(SQcredentialsId)
+                }
+            }
+        }
     }
 }
