@@ -67,7 +67,7 @@ pipeline {
         //             qualityGateStatus(SQcredentialsId)
         //         }
         //     }
-        }
+        // }
         stage('maven build: maven') {
                 when { expression {  params.action == 'create' } }
             steps {
