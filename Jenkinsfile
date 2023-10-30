@@ -80,7 +80,7 @@ pipeline {
                 when { expression {  params.action == 'create' } }
             steps {
                 script{
-                    dockerBuild(params.ImageName, params.ImageTag, params.dockerHubUser)
+                    dockerImagePush("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                 }
             }
         }
