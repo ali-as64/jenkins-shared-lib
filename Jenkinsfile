@@ -1,6 +1,6 @@
 @Library('my-shared-library') _
 pipeline {
-    agent { label 'dev-agent' }
+    agent { label 'flashnode' }
         
     parameters{
 
