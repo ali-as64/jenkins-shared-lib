@@ -1,6 +1,7 @@
 @Library('my-shared-library') _
 pipeline {
-    agent { label 'flashnode' }
+    //agent { label 'flashnode' }
+    agent any
         
     parameters{
 
