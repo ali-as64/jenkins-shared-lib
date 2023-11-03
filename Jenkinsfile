@@ -25,11 +25,11 @@ pipeline {
                     )
             }
         }
-        stage("Build Application"){
-                when { expression {  params.action == 'create' } }
-            steps {
-                sh "mvn install"
-            }
+        // stage("Build Application"){
+        //         when { expression {  params.action == 'create' } }
+        //     steps {
+        //         sh "mvn install"
+        //     }
 
         }
         stage('Unit Test maven') {
